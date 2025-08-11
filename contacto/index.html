@@ -26,21 +26,26 @@
         <h1>Contacto</h1>
         <p>Rellena el formulario o escríbenos directamente. Te responderemos en menos de 24 h.</p>
 
-        <form name="contacto" method="POST" data-netlify="true">
-            <label>Nombre
-                <input type="text" name="nombre" required>
-            </label>
-            <label>Email
-                <input type="email" name="email" required>
-            </label>
-            <label>Teléfono
-                <input type="tel" name="telefono">
-            </label>
-            <label>Mensaje
-                <textarea name="mensaje" rows="5" required></textarea>
-            </label>
-            <button type="submit" class="btn">Enviar</button>
+        <form name="contacto" method="POST" data-netlify="true" class="contact-form">
+            <input type="hidden" name="form-name" value="contacto" />
+
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" name="nombre" required>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required>
+
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" type="tel" name="telefono">
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+            <div class="actions">
+                <button type="submit" class="btn">Enviar</button>
+            </div>
         </form>
+
 
         <p style="margin-top:2rem;">
             <strong>Correo:</strong> <a href="mailto:sgagestudio@gmail.com">sgagestudio@gmail.com</a><br>
