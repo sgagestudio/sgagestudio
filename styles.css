@@ -9,6 +9,9 @@ body{
     line-height:1.6;
     color:#222;
     background:#fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 a{
     text-decoration:none;
@@ -92,6 +95,7 @@ header{
 /* SECCIONES GENÉRICAS */
 section{
     padding:4rem 2rem;
+    flex: 1;
 }
 .container{
     max-width:var(--max-width);
