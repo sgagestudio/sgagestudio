@@ -6,74 +6,77 @@ if (toggle) {
 }
 
 /* Endpoint del Worker (escucha en /contacto) */
-const WORKER_ENDPOINT = 'https://contacto.sgagestudio.workers.dev/contacto';
+ const WORKER_URL = "https://contacto.sgagestudio.workers.dev/contact";
 
-/**
- * Manejo del envío del formulario de contacto.
- * Envía FormData al Worker y muestra estado al usuario.
- */
-window.onRequestPost = async (event) => {
-  event.preventDefault();
+  const form = document.getElementById("contacto-form");
+  const submitBtn = document.getElementById("contacto-submit");
+  const statusBox = document.getElementById("contacto-status");
 
-  const form   = document.getElementById('contacto-form');
-  const btn    = document.getElementById('contacto-submit');
-  const status = document.getElementById('contacto-status');
-
-  if (!form) return false;
-
-  // Honeypot anti-spam: input oculto name="empresa"
-  const honeypot = form.querySelector('input[name="empresa"]');
-  if (honeypot && honeypot.value && honeypot.value.trim() !== '') {
-    setStatus(status, 'Mensaje enviado correctamente.');
-    form.reset();
-    return false;
+  function setStatus(msg, ok = true) {
+    statusBox.textContent = msg;
+    statusBox.style.color = ok ? "#065f46" : "#b91c1c";
   }
 
-  // Validación sencilla lado cliente
-  const nombre   = form.querySelector('#nombre')?.value?.trim() || '';
-  const email    = form.querySelector('#email')?.value?.trim() || '';
-  const telefono = form.querySelector('#telefono')?.value?.trim() || '';
-  const mensaje  = form.querySelector('#mensaje')?.value?.trim() || '';
-
-  if (!nombre || !email || !mensaje) {
-    setStatus(status, 'Por favor, completa nombre, email y mensaje.');
-    return false;
-  }
-
-  try {
-    if (btn) btn.disabled = true;
-    setStatus(status, 'Enviando...');
-
-    const formData = new FormData(form);
-
-    // POST directo al Worker
-    const res = await fetch(WORKER_ENDPOINT, {
-      method: 'POST',
-      body: formData
+  async function sendForm(data) {
+    const res = await fetch(WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
     });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || json.ok === false) {
+      throw new Error(json.error || `HTTP_${res.status}`);
+    }
+    return json;
+  }
 
-    let payload = null;
-    try { payload = await res.json(); } catch (_) {}
+  function validEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || "").trim());
+  }
 
-    if (!res.ok || (payload && payload.error)) {
-      const msg = (payload && (payload.error || payload.details)) || `Error HTTP ${res.status}`;
-      throw new Error(msg);
+  window.onRequestPost = async (ev) => {
+    ev.preventDefault();
+
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries());
+
+    // Campos del formulario
+    const nombre = (data.nombre || "").trim();
+    const email = (data.email || "").trim();
+    const telefono = (data.telefono || "").trim();
+    const mensaje = (data.mensaje || "").trim();
+    const empresa = (data.empresa || "").trim(); // honeypot
+
+    // Validaciones mínimas en cliente
+    if (!nombre || !email || !mensaje) {
+      setStatus("Por favor, completa nombre, email y mensaje.", false);
+      return false;
+    }
+    if (!validEmail(email)) {
+      setStatus("El email no parece válido.", false);
+      return false;
+    }
+    if (mensaje.length > 4000) {
+      setStatus("El mensaje es demasiado largo.", false);
+      return false;
     }
 
-    setStatus(status, 'Mensaje enviado correctamente. Te contactaremos en breve.');
-    form.reset();
-  } catch (err) {
-    console.error(err);
-    setStatus(status, 'No se pudo enviar el mensaje. Inténtalo de nuevo en unos minutos.');
-  } finally {
-    if (btn) btn.disabled = false;
-  }
+    submitBtn.disabled = true;
+    submitBtn.setAttribute("aria-busy", "true");
+    setStatus("Enviando…", true);
 
-  return false; // evita envío nativo
-};
+    try {
+      await sendForm({ nombre, email, telefono, mensaje, empresa });
+      setStatus("¡Gracias! Te responderemos en menos de 24 horas.");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      setStatus("No se pudo enviar el mensaje. Inténtalo de nuevo en unos minutos.", false);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.removeAttribute("aria-busy");
+    }
 
-function setStatus(el, msg) {
-  if (!el) return;
-  el.textContent = msg;
-  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
+    return false;
+  };
+})();
