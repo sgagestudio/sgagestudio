@@ -14,7 +14,6 @@
         <ul class="nav-links">
             <li><a href="/">Inicio</a></li>
             <li><a href="/servicios/">Servicios</a></li>
-            <li><a href="/recursos/">Recursos</a></li>
             <li><a href="/nosotros/">Nosotros</a></li>
             <li><a href="/contacto/">Contacto</a></li>
         </ul>
@@ -24,28 +23,32 @@
 <section>
     <div class="container">
         <h1>Contacto</h1>
-        <p>Rellena el formulario o escríbenos directamente. Te responderemos en menos de 24 h.</p>
+        <p>Cuéntanos tu reto y te proponemos un plan claro en menos de 24&nbsp;horas. También puedes escribirnos o llamarnos directamente.</p>
 
-        <form name="contacto" method="POST" data-netlify="true" class="contact-form">
-            <input type="hidden" name="form-name" value="contacto" />
+        <!-- IMPORTANTE: llamamos a window.onRequestPost(event) que implementarás en main.js -->
+        <form id="contacto-form" method="POST" onsubmit="return window.onRequestPost && window.onRequestPost(event)" class="contact-form" novalidate>
+            <!-- Honeypot anti-spam -->
+            <input type="text" name="empresa" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
 
             <label for="nombre">Nombre</label>
-            <input id="nombre" type="text" name="nombre" required>
+            <input id="nombre" type="text" name="nombre" required placeholder="Tu nombre y apellidos" autocomplete="name">
 
             <label for="email">Email</label>
-            <input id="email" type="email" name="email" required>
+            <input id="email" type="email" name="email" required placeholder="tu@empresa.com" autocomplete="email">
 
             <label for="telefono">Teléfono</label>
-            <input id="telefono" type="tel" name="telefono">
+            <input id="telefono" type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
 
             <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntanos brevemente tu proyecto, plazos y objetivos"></textarea>
 
             <div class="actions">
-                <button type="submit" class="btn">Enviar</button>
+                <button id="contacto-submit" type="submit" class="btn">Enviar</button>
             </div>
-        </form>
 
+            <!-- Mensajes de estado accesibles -->
+            <div id="contacto-status" aria-live="polite" style="margin-top:.75rem;font-size:.95rem;"></div>
+        </form>
 
         <p style="margin-top:2rem;">
             <strong>Correo:</strong> <a href="mailto:sgagestudio@gmail.com">sgagestudio@gmail.com</a><br>
@@ -55,8 +58,10 @@
 </section>
 
 <footer>
-    <p>&copy; 2024 Sgage Studio - Todos los derechos reservados</p>
+    <p>&copy; 2025 Sgage Studio - Todos los derechos reservados</p>
     <p>Contacto: <a href="mailto:sgagestudio@gmail.com">sgagestudio@gmail.com</a> | Tel: <a href="tel:+34722853202">+34 722 85 32 02</a></p>
 </footer>
+
+<script src="../main.js"></script>
 </body>
 </html>

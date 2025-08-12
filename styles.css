@@ -96,7 +96,7 @@ header{
 /* SECCIONES GENÉRICAS */
 section{
     padding:4rem 2rem;
-    flex: 1;
+    flex: 1; /* Ocupa todo el espacio disponible entre header y footer */
 }
 .container{
     max-width:var(--max-width);
@@ -114,12 +114,15 @@ section{
     border-radius:8px;
     text-align:center;
 }
+
+/* FOOTER PEGADO ABAJO */
 footer{
     background:var(--dark);
     color:#fff;
     text-align:center;
     padding:2rem 1rem;
     font-size:.9rem;
+    margin-top: auto; /* Empuja el footer hacia el fondo */
 }
 footer .social{
     margin-top:1rem;
@@ -132,11 +135,11 @@ footer .social a{
 /* FORMULARIO */
 .contact-form{
     display:grid;
-    grid-template-columns: 150px minmax(0,1fr); /* col fija para etiquetas + col flexible */
+    grid-template-columns: 150px minmax(0,1fr);
     align-items:center;
-    gap: 12px 16px;               /* fila, columna */
+    gap: 12px 16px;
     max-width: 720px;
-    margin: 2rem 0;               /* alineado a la izquierda dentro de .container */
+    margin: 2rem 0;
 }
 .contact-form label{
     font-weight:600;
@@ -153,9 +156,8 @@ footer .social a{
     min-height:140px;
     resize:vertical;
 }
-/* Botón debajo de la columna de inputs */
 .contact-form .actions{
-    grid-column:2;                /* lo coloca bajo la segunda columna */
+    grid-column:2;
 }
 .contact-form button[type="submit"]{
     align-self:flex-start;
