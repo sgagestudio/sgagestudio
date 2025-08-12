@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Contacto - Sgage Studio</title>
-    <meta name="description" content="Solicita tu diagnóstico gratuito y habla con nosotros.">
+    <meta name="description" content="Hablemos sobre tu proyecto y encuentra soluciones digitales a tu medida.">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -22,24 +22,24 @@
 
 <section>
     <div class="container">
-        <h1>Contacto</h1>
-        <p>Cuéntanos tu reto y te proponemos un plan claro en menos de 24&nbsp;horas. También puedes escribirnos o llamarnos directamente.</p>
+        <h1>Hablemos de tu idea</h1>
+        <p>Cuéntanos qué quieres lograr y te enviaremos una propuesta clara y sin compromiso en menos de 24&nbsp;horas. No importa si es un proyecto grande o una simple mejora, estamos aquí para escucharte.</p>
 
-        <!-- IMPORTANTE: llamamos a window.onRequestPost(event) que implementarás en main.js -->
+        <!-- Importante: onsubmit llama a window.onRequestPost del main.js -->
         <form id="contacto-form" method="POST" onsubmit="return window.onRequestPost && window.onRequestPost(event)" class="contact-form" novalidate>
             <!-- Honeypot anti-spam -->
             <input type="text" name="empresa" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
 
-            <label for="nombre">Nombre</label>
-            <input id="nombre" type="text" name="nombre" required placeholder="Tu nombre y apellidos" autocomplete="name">
+            <label for="nombre">Tu nombre</label>
+            <input id="nombre" type="text" name="nombre" required placeholder="Nombre y apellidos" autocomplete="name">
 
-            <label for="email">Email</label>
+            <label for="email">Tu email</label>
             <input id="email" type="email" name="email" required placeholder="tu@empresa.com" autocomplete="email">
 
-            <label for="telefono">Teléfono</label>
+            <label for="telefono">Teléfono (opcional)</label>
             <input id="telefono" type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
 
-            <label for="mensaje">Mensaje</label>
+            <label for="mensaje">¿Qué necesitas?</label>
             <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntanos brevemente tu proyecto, plazos y objetivos"></textarea>
 
             <div class="actions">
@@ -63,5 +63,7 @@
 </footer>
 
 <script src="../main.js"></script>
+<script>
+</script>
 </body>
 </html>
