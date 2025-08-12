@@ -5,9 +5,12 @@ if (toggle) {
   toggle.addEventListener('click', () => nav.classList.toggle('show'));
 }
 
+/* Endpoint del Worker (escucha en /contacto) */
+const WORKER_ENDPOINT = 'https://contacto.sgagestudio.workers.dev/contacto';
+
 /**
  * Manejo del envío del formulario de contacto.
- * Envía FormData al Worker en /contacto (POST) y muestra estado al usuario.
+ * Envía FormData al Worker y muestra estado al usuario.
  */
 window.onRequestPost = async (event) => {
   event.preventDefault();
@@ -21,7 +24,6 @@ window.onRequestPost = async (event) => {
   // Honeypot anti-spam: input oculto name="empresa"
   const honeypot = form.querySelector('input[name="empresa"]');
   if (honeypot && honeypot.value && honeypot.value.trim() !== '') {
-    // Si es bot, simulamos éxito sin hacer request
     setStatus(status, 'Mensaje enviado correctamente.');
     form.reset();
     return false;
@@ -43,10 +45,13 @@ window.onRequestPost = async (event) => {
     setStatus(status, 'Enviando...');
 
     const formData = new FormData(form);
-    // Enviamos directamente el FormData al Worker mapeado en /contacto
-    const res = await fetch('/contacto', { method: 'POST', body: formData });
 
-    // Intentamos leer JSON, pero si falla, mostramos texto genérico
+    // POST directo al Worker
+    const res = await fetch(WORKER_ENDPOINT, {
+      method: 'POST',
+      body: formData
+    });
+
     let payload = null;
     try { payload = await res.json(); } catch (_) {}
 
@@ -70,6 +75,5 @@ window.onRequestPost = async (event) => {
 function setStatus(el, msg) {
   if (!el) return;
   el.textContent = msg;
-  // Asegura que el usuario vea el estado
   el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
