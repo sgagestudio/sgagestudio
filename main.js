@@ -5,8 +5,9 @@ if (toggle) {
   toggle.addEventListener('click', () => nav.classList.toggle('show'));
 }
 
-/* Endpoint del Worker (escucha en /contacto) */
- const WORKER_URL = "https://contacto.sgagestudio.workers.dev/contact";
+(() => {
+
+  const WORKER_URL = "https://contacto.sgagestudio.workers.dev/contact";
 
   const form = document.getElementById("contacto-form");
   const submitBtn = document.getElementById("contacto-submit");
