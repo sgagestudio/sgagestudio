@@ -6,6 +6,7 @@
     <title>Servicios - Sgage Studio</title>
     <meta name="description" content="Servicios cloud, desarrollo web, automatización y CRM para PYMES.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1220">
 
     <!-- SEO -->
     <meta name="robots" content="index,follow">
@@ -64,10 +65,17 @@
 </head>
 <body>
 
-<header>
-    <nav class="navbar">
+<header class="site-header">
+    <nav class="navbar" aria-label="Principal">
         <a href="/" class="logo">Sgage Studio</a>
-        <ul class="nav-links">
+
+        <button class="menu-toggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="primary-nav">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <ul id="primary-nav" class="nav-links">
             <li><a href="/">Inicio</a></li>
             <li><a href="/servicios/">Servicios</a></li>
             <li><a href="/nosotros/">Nosotros</a></li>
@@ -76,52 +84,89 @@
     </nav>
 </header>
 
-<section>
-    <div class="container">
-        <h1>Servicios</h1>
-        <div class="cards">
-            <div class="card">
-                <h3>Automatización</h3>
-                <p>Hacemos que tu negocio trabaje en piloto automático reduciendo tareas repetitivas y conectando tus herramientas para que todo fluya.</p>
-                <ul style="list-style:disc;padding-left:1.25rem;margin-top:.5rem;">
-                    <li>Procesos automáticos que ahorran tiempo y evitan errores.</li>
-                    <li>Conexión de tus sistemas para que “hablen” entre sí.</li>
-                    <li>Resultados medibles desde el primer mes.</li>
-                </ul>
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Servicios</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="container content">
+            <div class="cards">
+                <div class="card">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2v3"/>
+                            <path d="M12 19v3"/>
+                            <path d="M4.22 4.22l2.12 2.12"/>
+                            <path d="M17.66 17.66l2.12 2.12"/>
+                            <path d="M2 12h3"/>
+                            <path d="M19 12h3"/>
+                            <path d="M4.22 19.78l2.12-2.12"/>
+                            <path d="M17.66 6.34l2.12-2.12"/>
+                            <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Automatización</h3>
+                    <p>Hacemos que tu negocio trabaje en piloto automático reduciendo tareas repetitivas y conectando tus herramientas para que todo fluya.</p>
+                    <ul>
+                        <li>Procesos automáticos que ahorran tiempo y evitan errores.</li>
+                        <li>Conexión de tus sistemas para que “hablen” entre sí.</li>
+                        <li>Resultados medibles desde el primer mes.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 9l-3 3 3 3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 9l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 7l-4 10" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Desarrollo Web &amp; Apps</h3>
+                    <p>Creamos páginas y aplicaciones rápidas, atractivas y que funcionan en cualquier dispositivo, listas para crecer junto con tu negocio.</p>
+                    <ul>
+                        <li>Funcionalidades a medida para tus necesidades.</li>
+                        <li>Optimización para que carguen rápido y se vean perfectas.</li>
+                        <li>Entregas con pruebas y control de calidad en cada etapa.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2l9 5-9 5-9-5 9-5Z" stroke-linejoin="round"/>
+                            <path d="M3 7v10l9 5 9-5V7" stroke-linejoin="round"/>
+                            <path d="M12 12v10" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>CRM &amp; ERP</h3>
+                    <p>Organizamos y potenciamos la gestión de tus clientes y operaciones para que puedas vender más y tomar mejores decisiones.</p>
+                    <ul>
+                        <li>Configuración rápida y sin complicaciones.</li>
+                        <li>Información clara y en tiempo real para tu equipo.</li>
+                        <li>Herramientas que ayudan a coordinar ventas, marketing y operaciones.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Desarrollo Web & Apps</h3>
-                <p>Creamos páginas y aplicaciones rápidas, atractivas y que funcionan en cualquier dispositivo, listas para crecer junto con tu negocio.</p>
-                <ul style="list-style:disc;padding-left:1.25rem;margin-top:.5rem;">
-                    <li>Funcionalidades a medida para tus necesidades.</li>
-                    <li>Optimización para que carguen rápido y se vean perfectas.</li>
-                    <li>Entregas con pruebas y control de calidad en cada etapa.</li>
-                </ul>
-            </div>
+            <hr class="hr">
 
-            <div class="card">
-                <h3>CRM & ERP</h3>
-                <p>Organizamos y potenciamos la gestión de tus clientes y operaciones para que puedas vender más y tomar mejores decisiones.</p>
-                <ul style="list-style:disc;padding-left:1.25rem;margin-top:.5rem;">
-                    <li>Configuración rápida y sin complicaciones.</li>
-                    <li>Información clara y en tiempo real para tu equipo.</li>
-                    <li>Herramientas que ayudan a coordinar ventas, marketing y operaciones.</li>
-                </ul>
+            <div class="prose">
+                <h2>Cómo trabajamos</h2>
+                <p><strong>Descubrimiento → Prototipo → Iteraciones quincenales → Entrega y soporte</strong>. Transparencia total en alcance, tiempos y costes, con métricas claras de valor entregado.</p>
             </div>
         </div>
-        
-
-        <div style="margin-top:2rem;">
-            <h2 style="margin-bottom:.5rem;">Cómo trabajamos</h2>
-            <p><strong>Descubrimiento → Prototipo → Iteraciones quincenales → Entrega y soporte</strong>. Transparencia total en alcance, tiempos y costes, con métricas claras de valor entregado.</p>
-        </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <footer>
     <p>&copy; 2025 Sgage Studio - Todos los derechos reservados</p>
     <p>Contacto: <a href="mailto:sgagestudio@gmail.com">sgagestudio@gmail.com</a> | Tel: <a href="tel:+34722853202">+34 722 85 32 02</a></p>
 </footer>
+
+<script src="../main.js"></script>
 </body>
 </html>

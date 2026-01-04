@@ -5,6 +5,7 @@
     <title>Contacto - Sgage Studio</title>
     <meta name="description" content="Hablemos sobre tu proyecto y encuentra soluciones digitales a tu medida.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1220">
 
     <!-- SEO -->
     <meta name="robots" content="index,follow">
@@ -63,10 +64,17 @@
 </head>
 <body>
 
-<header>
-    <nav class="navbar">
+<header class="site-header">
+    <nav class="navbar" aria-label="Principal">
         <a href="/" class="logo">Sgage Studio</a>
-        <ul class="nav-links">
+
+        <button class="menu-toggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="primary-nav">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <ul id="primary-nav" class="nav-links">
             <li><a href="/">Inicio</a></li>
             <li><a href="/servicios/">Servicios</a></li>
             <li><a href="/nosotros/">Nosotros</a></li>
@@ -75,42 +83,52 @@
     </nav>
 </header>
 
-<section>
-    <div class="container">
-        <h1>Hablemos de tu idea</h1>
-        <p>Cuéntanos qué quieres lograr y te enviaremos una propuesta clara y sin compromiso en menos de 24&nbsp;horas. No importa si es un proyecto grande o una simple mejora, estamos aquí para escucharte.</p>
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Hablemos de tu idea</h1>
+            <p>Cuéntanos qué quieres lograr y te enviaremos una propuesta clara y sin compromiso en menos de 24&nbsp;horas. No importa si es un proyecto grande o una simple mejora, estamos aquí para escucharte.</p>
+        </div>
+    </section>
 
-        <!-- Importante: onsubmit llama a window.onRequestPost del main.js -->
-        <form id="contacto-form" method="POST" onsubmit="return window.onRequestPost && window.onRequestPost(event)" class="contact-form" novalidate>
-            <!-- Honeypot anti-spam -->
-            <input type="text" name="empresa" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+    <section>
+        <div class="container content contact-layout">
+            <div class="panel">
+                <!-- Importante: onsubmit llama a window.onRequestPost del main.js -->
+                <form id="contacto-form" method="POST" onsubmit="return window.onRequestPost && window.onRequestPost(event)" class="contact-form" novalidate>
+                    <!-- Honeypot anti-spam -->
+                    <input type="text" name="empresa" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
 
-            <label for="nombre">Tu nombre</label>
-            <input id="nombre" type="text" name="nombre" required placeholder="Nombre y apellidos" autocomplete="name">
+                    <label for="nombre">Tu nombre</label>
+                    <input id="nombre" type="text" name="nombre" required placeholder="Nombre y apellidos" autocomplete="name">
 
-            <label for="email">Tu email</label>
-            <input id="email" type="email" name="email" required placeholder="tu@empresa.com" autocomplete="email">
+                    <label for="email">Tu email</label>
+                    <input id="email" type="email" name="email" required placeholder="tu@empresa.com" autocomplete="email">
 
-            <label for="telefono">Teléfono (opcional)</label>
-            <input id="telefono" type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
+                    <label for="telefono">Teléfono (opcional)</label>
+                    <input id="telefono" type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
 
-            <label for="mensaje">¿Qué necesitas?</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntanos brevemente tu proyecto, plazos y objetivos"></textarea>
+                    <label for="mensaje">¿Qué necesitas?</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntanos brevemente tu proyecto, plazos y objetivos"></textarea>
 
-            <div class="actions">
-                <button id="contacto-submit" type="submit" class="btn">Enviar</button>
+                    <div class="actions">
+                        <button id="contacto-submit" type="submit" class="btn">Enviar</button>
+                    </div>
+
+                    <!-- Mensajes de estado accesibles -->
+                    <div id="contacto-status" aria-live="polite" style="font-size:.95rem;"></div>
+                </form>
             </div>
 
-            <!-- Mensajes de estado accesibles -->
-            <div id="contacto-status" aria-live="polite" style="margin-top:.75rem;font-size:.95rem;"></div>
-        </form>
-
-        <p style="margin-top:2rem;">
-            <strong>Correo:</strong> <a href="mailto:sgagestudio@gmail.com">sgagestudio@gmail.com</a><br>
-            <strong>Teléfono:</strong> <a href="tel:+34722853202">+34 722 85 32 02</a>
-        </p>
-    </div>
-</section>
+            <div class="panel">
+                <p>
+                    <strong>Correo:</strong> <a href="mailto:sgagestudio@gmail.com">sgagestudio@gmail.com</a><br>
+                    <strong>Teléfono:</strong> <a href="tel:+34722853202">+34 722 85 32 02</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
 
 <footer>
     <p>&copy; 2025 Sgage Studio - Todos los derechos reservados</p>
@@ -118,7 +136,5 @@
 </footer>
 
 <script src="../main.js"></script>
-<script>
-</script>
 </body>
 </html>

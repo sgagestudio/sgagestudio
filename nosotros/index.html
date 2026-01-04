@@ -6,6 +6,7 @@
     <title>Sobre nosotros - Sgage Studio</title>
     <meta name="description" content="Conoce a Sgage Studio y nuestra misión en el desarrollo de soluciones digitales y automatizaciones en la nube.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1220">
 
     <!-- SEO -->
     <meta name="robots" content="index,follow">
@@ -64,10 +65,17 @@
 </head>
 <body>
 
-<header>
-    <nav class="navbar">
+<header class="site-header">
+    <nav class="navbar" aria-label="Principal">
         <a href="/" class="logo">Sgage Studio</a>
-        <ul class="nav-links">
+
+        <button class="menu-toggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="primary-nav">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <ul id="primary-nav" class="nav-links">
             <li><a href="/">Inicio</a></li>
             <li><a href="/servicios/">Servicios</a></li>
             <li><a href="/nosotros/">Nosotros</a></li>
@@ -76,36 +84,47 @@
     </nav>
 </header>
 
-<section>
-    <div class="container">
-        <h1>Sobre nosotros</h1>
-        <p>En <strong>Sgage Studio</strong> creemos que la tecnología no es solo una herramienta, sino un motor de cambio. 
-        Nos especializamos en el diseño, desarrollo e implementación de <strong>soluciones digitales en la nube</strong>, 
-        <strong>automatizaciones inteligentes</strong> y proyectos tecnológicos de cualquier escala, desde integraciones simples 
-        hasta plataformas avanzadas de nueva generación.</p>
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Sobre nosotros</h1>
+        </div>
+    </section>
 
-        <p>Nuestro enfoque combina <strong>experiencia técnica</strong>, <strong>visión estratégica</strong> y <strong>agilidad</strong> 
-        para ayudar a empresas y emprendedores a transformar sus procesos, optimizar recursos y acelerar su crecimiento. 
-        Trabajamos codo a codo con nuestros clientes para comprender sus desafíos, anticipar oportunidades y ofrecer 
-        soluciones que no solo funcionen hoy, sino que estén preparadas para el mañana.</p>
+    <section>
+        <div class="container content prose">
+            <p>En <strong>Sgage Studio</strong> creemos que la tecnología no es solo una herramienta, sino un motor de cambio.
+            Nos especializamos en el diseño, desarrollo e implementación de <strong>soluciones digitales en la nube</strong>,
+            <strong>automatizaciones inteligentes</strong> y proyectos tecnológicos de cualquier escala, desde integraciones simples
+            hasta plataformas avanzadas de nueva generación.</p>
 
-        <h2 style="margin-top:2rem;">Lo que nos define</h2>
-        <ul style="list-style:disc;padding-left:1.5rem;">
-            <li><strong>Innovación aplicada</strong>: adoptamos tecnologías emergentes para crear soluciones que aporten valor real.</li>
-            <li><strong>Escalabilidad</strong>: desarrollos pensados para crecer junto a tu negocio.</li>
-            <li><strong>Eficiencia</strong>: optimización de procesos mediante automatización y digitalización inteligente.</li>
-            <li><strong>Cercanía</strong>: comunicación directa, tiempos de respuesta rápidos y un trato personalizado.</li>
-        </ul>
+            <p>Nuestro enfoque combina <strong>experiencia técnica</strong>, <strong>visión estratégica</strong> y <strong>agilidad</strong>
+            para ayudar a empresas y emprendedores a transformar sus procesos, optimizar recursos y acelerar su crecimiento.
+            Trabajamos codo a codo con nuestros clientes para comprender sus desafíos, anticipar oportunidades y ofrecer
+            soluciones que no solo funcionen hoy, sino que estén preparadas para el mañana.</p>
 
-        <p>Nuestra misión es sencilla: <strong>convertir ideas en soluciones digitales que impulsen resultados medibles</strong>. 
-        Tanto si buscas optimizar un flujo de trabajo como si quieres construir un ecosistema digital completo, 
-        en <strong>Sgage Studio</strong> convertimos la complejidad tecnológica en oportunidades de negocio.</p>
-    </div>
-</section>
+            <hr class="hr">
+
+            <h2>Lo que nos define</h2>
+            <ul>
+                <li><strong>Innovación aplicada</strong>: adoptamos tecnologías emergentes para crear soluciones que aporten valor real.</li>
+                <li><strong>Escalabilidad</strong>: desarrollos pensados para crecer junto a tu negocio.</li>
+                <li><strong>Eficiencia</strong>: optimización de procesos mediante automatización y digitalización inteligente.</li>
+                <li><strong>Cercanía</strong>: comunicación directa, tiempos de respuesta rápidos y un trato personalizado.</li>
+            </ul>
+
+            <p>Nuestra misión es sencilla: <strong>convertir ideas en soluciones digitales que impulsen resultados medibles</strong>.
+            Tanto si buscas optimizar un flujo de trabajo como si quieres construir un ecosistema digital completo,
+            en <strong>Sgage Studio</strong> convertimos la complejidad tecnológica en oportunidades de negocio.</p>
+        </div>
+    </section>
+</main>
 
 <footer>
     <p>&copy; 2025 Sgage Studio - Todos los derechos reservados</p>
     <p>Contacto: <a href="mailto:sgagestudio@gmail.com">sgagestudio@gmail.com</a> | Tel: <a href="tel:+34722853202">+34 722 85 32 02</a></p>
 </footer>
+
+<script src="../main.js"></script>
 </body>
 </html>
