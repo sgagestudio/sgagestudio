@@ -80,12 +80,15 @@ header.site-header.is-scrolled{ box-shadow:0 12px 28px rgba(2,6,23,.35); }
   position:relative;
 }
 .logo{
-  font-family:"Playfair Display", "Times New Roman", serif;
-  font-weight:700;
-  font-size:1.2rem;
-  letter-spacing:.04em;
-  text-transform:none;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
   color:#fff;
+}
+.logo__image{
+  height:34px;
+  width:auto;
+  display:block;
 }
 .menu-toggle{
   appearance:none;
