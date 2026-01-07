@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
 /* ===============================
    Sgage Studio — Corporate UI
    =============================== */
@@ -78,10 +80,11 @@ header.site-header.is-scrolled{ box-shadow:0 12px 28px rgba(2,6,23,.35); }
   position:relative;
 }
 .logo{
-  font-weight:800;
-  font-size:1.05rem;
-  letter-spacing:.06em;
-  text-transform:uppercase;
+  font-family:"Playfair Display", "Times New Roman", serif;
+  font-weight:700;
+  font-size:1.2rem;
+  letter-spacing:.04em;
+  text-transform:none;
   color:#fff;
 }
 .menu-toggle{
@@ -181,20 +184,32 @@ header.site-header.is-scrolled{ box-shadow:0 12px 28px rgba(2,6,23,.35); }
   position:relative;
   overflow:hidden;
 }
-.hero-visual svg{ position:absolute; inset:0; width:100%; height:100%; }
+.hero-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(11,18,32,.2), rgba(11,27,58,.55));
+}
+.hero-visual img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 
 /* Page hero (internas) */
 .page-hero{
   position:relative;
   overflow:hidden;
+  --page-hero-image:none;
   padding:clamp(2.75rem, 5vw, 3.5rem) 1.25rem;
   background:
+    linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,.72)),
+    var(--page-hero-image),
     radial-gradient(900px 340px at 12% 30%, rgba(37,99,235,.14), transparent 55%),
     radial-gradient(820px 320px at 88% 20%, rgba(0,194,203,.16), transparent 55%),
     var(--surface);
+  background-size:cover;
+  background-position:center;
   border-bottom:1px solid rgba(15,23,42,.06);
 }
 .page-hero h1{ color:var(--text); }
+.page-hero p{ max-width:70ch; }
 
 /* Section alt */
 .section--alt{ position:relative; }
@@ -209,6 +224,34 @@ header.site-header.is-scrolled{ box-shadow:0 12px 28px rgba(2,6,23,.35); }
 }
 .section--alt > *{ position:relative; }
 .section-title{ text-align:center; margin-bottom:2rem; }
+
+/* Showcase */
+.showcase{
+  padding-top:calc(var(--section-y) * .9);
+}
+.image-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:1.25rem;
+}
+.image-card{
+  background:rgba(255,255,255,.88);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-soft);
+  display:grid;
+  gap:0;
+}
+.image-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+.image-card .image-card__body{
+  padding:1.15rem 1.2rem 1.35rem;
+}
+.image-card h3{ margin-bottom:.5rem; }
 
 /* Cards */
 .cards{
