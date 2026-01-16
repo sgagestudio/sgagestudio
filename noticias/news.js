@@ -9,9 +9,6 @@
   const badge = document.getElementById("current-news-badge");
   const dailyDetails = document.getElementById("daily-news");
   const selectedPanel = document.getElementById("selected-news-panel");
-  const selectedTitle = document.getElementById("selected-news-title");
-  const selectedSummary = document.getElementById("selected-news-summary");
-  const selectedMeta = document.getElementById("selected-news-meta");
 
   const currentId = "digitalizacion_pymes_europa_2026";
   const currentItem = data.findNewsById(currentId) || data.items[0];
@@ -41,20 +38,14 @@
 
   const setSelected = (item) => {
     if (!selectedPanel || !item) return;
-    if (selectedTitle) selectedTitle.textContent = item.title;
-    if (selectedSummary) selectedSummary.textContent = item.summary;
-    if (selectedMeta) {
-      selectedMeta.innerHTML = `
-        <span class="news-pill">${item.date}</span>
-        <span class="news-pill">${item.category}</span>
-      `;
-    }
+    selectedPanel.innerHTML = item.html || "";
     selectedPanel.hidden = false;
   };
 
   const hideSelected = () => {
     if (!selectedPanel) return;
     selectedPanel.hidden = true;
+    selectedPanel.innerHTML = "";
   };
 
   setCurrent(currentItem);
