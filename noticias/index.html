@@ -111,131 +111,29 @@
                 </aside>
 
                 <div class="news-main">
-                    <div class="news-spotlight">
-                        <span class="news-tag">Noticia del día</span>
-                        <h2 id="current-news-title"></h2>
-                        <p id="current-news-summary" class="news-spotlight__summary"></p>
-                        <div class="news-spotlight__meta">
-                            <span class="news-badge" id="current-news-badge">Fintech</span>
-                            <span id="current-news-meta"></span>
+                    <details class="news-spotlight news-spotlight--collapsible" id="daily-news" open>
+                        <summary class="news-spotlight__summary-toggle">
+                            <span class="news-tag">Noticia del día</span>
+                            <h2 id="current-news-title"></h2>
+                            <span class="news-spotlight__toggle-hint">Ver resumen completo</span>
+                        </summary>
+                        <div class="news-spotlight__content">
+                            <p id="current-news-summary" class="news-spotlight__summary"></p>
+                            <div class="news-spotlight__meta">
+                                <span class="news-badge" id="current-news-badge">Fintech</span>
+                                <span id="current-news-meta"></span>
+                            </div>
                         </div>
-                    </div>
+                    </details>
 
-                    <article class="news-article" itemscope itemtype="https://schema.org/NewsArticle">
-                        <meta itemprop="inLanguage" content="es-ES">
-                        <meta itemprop="datePublished" content="2026-01-16">
-                        <meta itemprop="dateModified" content="2026-01-16">
-
+                    <section class="news-article" id="selected-news-panel" hidden>
                         <header class="news-header">
-                            <h1 itemprop="headline">La digitalización financiera para pymes entra en una nueva fase en Europa: fintech, regulación e IA convergen para impulsar la competitividad</h1>
-
-                            <p class="news-subhead" itemprop="description">
-                              En 2026, las pymes europeas afrontan un punto de inflexión: la adopción tecnológica y el auge de soluciones fintech ya no son opcionales,
-                              sino claves para competir. La combinación de IA, automatización, cloud y nuevas normas europeas está redefiniendo la gestión financiera.
-                            </p>
-
-                            <div class="news-meta">
-                              <span class="news-pill">16/01/2026</span>
-                              <span class="news-pill">Fintech</span>
-                              <span class="news-pill">Pymes</span>
-                              <span class="news-pill">Digitalización</span>
-                              <span class="news-pill">Europa</span>
-                            </div>
+                            <span class="news-tag news-tag--alt">Noticia seleccionada</span>
+                            <h2 id="selected-news-title"></h2>
+                            <p class="news-subhead" id="selected-news-summary"></p>
+                            <div class="news-meta" id="selected-news-meta"></div>
                         </header>
-
-                        <section class="news-body" itemprop="articleBody">
-                            <h2>Contexto: la digitalización ya no es “opción”, es ventaja competitiva</h2>
-                            <p>
-                              La digitalización de las pymes en Europa está avanzando, pero con una brecha clara entre quienes han consolidado procesos básicos
-                              (facturación, contabilidad, conciliación, control de cobros/pagos) y quienes intentan adoptar tecnologías avanzadas sin una base sólida.
-                              El resultado: oportunidades enormes para ganar eficiencia, pero también riesgos operativos y de seguridad si se acelera sin estrategia.
-                            </p>
-
-                            <h2>Qué tecnologías están impulsando la transformación en 2026</h2>
-
-                            <h3>1) Inteligencia artificial aplicada a operaciones</h3>
-                            <p>
-                              La IA se consolida como motor de productividad: automatiza tareas repetitivas, mejora la atención al cliente y permite generar informes
-                              financieros y previsiones con mayor velocidad. En pymes, su impacto es especialmente fuerte cuando se integra en procesos cotidianos
-                              (gestión de gastos, categorización de movimientos, alertas de tesorería).
-                            </p>
-
-                            <h3>2) Cloud y software empresarial en modelo SaaS</h3>
-                            <p>
-                              Las plataformas cloud reducen el coste de infraestructura y facilitan la escalabilidad. Para pymes, esto significa poder activar nuevas
-                              funcionalidades (pagos, facturación, integraciones con contabilidad) sin grandes inversiones iniciales.
-                            </p>
-
-                            <h3>3) Analítica avanzada para decisiones de negocio</h3>
-                            <p>
-                              La analítica deja de ser “solo para grandes”: cada vez más pymes utilizan dashboards para entender márgenes, ciclos de cobro, puntos de fuga
-                              de gasto y escenarios de liquidez. Esto acelera decisiones de compras, contratación y expansión.
-                            </p>
-
-                            <h3>4) Ciberseguridad como requisito de continuidad</h3>
-                            <p>
-                              A mayor digitalización, mayor exposición. La ciberseguridad pasa a ser una pieza central: autenticación robusta, formación interna, control
-                              de accesos, copias de seguridad y planes de respuesta a incidentes.
-                            </p>
-
-                            <h2>El papel de las fintech: más agilidad, menos fricción</h2>
-
-                            <h3>Financiación digital más allá del crédito tradicional</h3>
-                            <p>
-                              En paralelo a la banca, las fintech aceleran soluciones de financiación alternativa: anticipo de facturas, financiación flexible,
-                              underwriting apoyado en datos y desembolsos más rápidos. Para muchas pymes, esto se traduce en mejorar el flujo de caja sin procesos largos.
-                            </p>
-
-                            <h3>Gestión financiera integrada</h3>
-                            <p>
-                              Cuentas digitales, tarjetas con control por equipos, conciliación automática y conectividad con herramientas de contabilidad están elevando
-                              el estándar. El beneficio es directo: menos tiempo en tareas administrativas y más visibilidad sobre la tesorería.
-                            </p>
-
-                            <h2>Europa acelera con regulación: confianza y nuevas oportunidades</h2>
-                            <p>
-                              El marco europeo sigue evolucionando para reforzar resiliencia operativa, transparencia y seguridad. Normativas como DORA (resiliencia
-                              operativa digital) y MiCA (criptoactivos), junto con el avance hacia modelos de Open Finance, están impulsando un ecosistema más interoperable.
-                              En la práctica, esto habilita experiencias más fluidas, mayor intercambio seguro de datos y nuevos servicios basados en consentimiento.
-                            </p>
-
-                            <h2>Retos principales para pymes en 2026</h2>
-                            <ul>
-                              <li><strong>Brecha digital interna:</strong> falta de estandarización de procesos y sistemas “parcheados”.</li>
-                              <li><strong>Adopción de IA sin base:</strong> riesgos si no hay datos limpios, procesos claros y controles.</li>
-                              <li><strong>Talento y formación:</strong> necesidad de habilidades digitales en equipos pequeños.</li>
-                              <li><strong>Ciberseguridad:</strong> incremento del riesgo por mayor superficie digital.</li>
-                            </ul>
-
-                            <h2>Oportunidades: cómo avanzar sin perder el control</h2>
-                            <ol>
-                              <li><strong>Consolidar lo básico:</strong> facturación, contabilidad, conciliación y reporting mensual.</li>
-                              <li><strong>Integrar herramientas:</strong> banca/fintech + ERP/contabilidad + CRM.</li>
-                              <li><strong>Automatizar con criterio:</strong> empezar por gastos, cobros/pagos y alertas de tesorería.</li>
-                              <li><strong>Seguridad desde el inicio:</strong> MFA, roles, backups y formación continua.</li>
-                            </ol>
-
-                            <h2>Conclusión</h2>
-                            <p>
-                              La digitalización financiera de las pymes en Europa entra en una etapa de madurez: ya no se trata solo de “tener herramientas”, sino de
-                              integrarlas con estrategia, datos y seguridad. En 2026, fintech, IA y regulación convergen para abrir una ventana clara: operar mejor,
-                              decidir más rápido y competir con más eficiencia.
-                            </p>
-
-                            <hr>
-
-                            <p class="news-cta">
-                              <strong>¿Quieres más análisis fintech para pymes?</strong><br>
-                              Suscríbete a nuestras noticias o explora nuestros recursos sobre digitalización y gestión financiera.
-                            </p>
-                        </section>
-
-                        <footer class="news-footer">
-                            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-                                <meta itemprop="name" content="TU_MARCA">
-                            </div>
-                        </footer>
-                    </article>
+                    </section>
                 </div>
             </div>
         </div>
