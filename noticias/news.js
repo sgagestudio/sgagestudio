@@ -8,6 +8,7 @@
   const meta = document.getElementById("current-news-meta");
   const badge = document.getElementById("current-news-badge");
   const dailyDetails = document.getElementById("daily-news");
+  const dailySummary = dailyDetails?.querySelector(".news-spotlight__summary-toggle");
   const selectedPanel = document.getElementById("selected-news-panel");
 
   const currentId = "digitalizacion_pymes_europa_2026";
@@ -42,14 +43,23 @@
     selectedPanel.hidden = false;
   };
 
-  const hideSelected = () => {
-    if (!selectedPanel) return;
-    selectedPanel.hidden = true;
-    selectedPanel.innerHTML = "";
-  };
-
   setCurrent(currentItem);
-  hideSelected();
+  setSelected(currentItem);
+  if (dailyDetails) dailyDetails.open = true;
+
+  if (dailySummary && dailyDetails) {
+    const stopToggle = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+    };
+
+    dailySummary.addEventListener("click", stopToggle);
+    dailySummary.addEventListener("keydown", (event) => {
+      if (event.key === " " || event.key === "Enter") {
+        stopToggle(event);
+      }
+    });
+  }
 
   if (list) {
     list.addEventListener("click", (event) => {
@@ -59,7 +69,7 @@
       if (!item) return;
       if (item.id === currentItem.id) {
         setCurrent(item);
-        hideSelected();
+        setSelected(item);
         if (dailyDetails) dailyDetails.open = true;
         return;
       }

@@ -453,6 +453,12 @@ header.site-header.is-scrolled{ box-shadow:0 12px 28px rgba(2,6,23,.35); }
 .news-spotlight--collapsible{
   padding:0;
 }
+.news-spotlight--locked .news-spotlight__summary-toggle{
+  cursor:default;
+}
+.news-spotlight--locked .news-spotlight__toggle-hint{
+  display:none;
+}
 .news-spotlight__summary-toggle{
   list-style:none;
   cursor:pointer;
