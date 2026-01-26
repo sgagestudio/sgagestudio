@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Privacidad | Dicho — SgaGeStudio</title>
+  <meta name="description" content="Política de privacidad de Dicho, el gestor de gastos por voz de SgaGeStudio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body {
+      background: radial-gradient(circle at top, rgba(34, 211, 238, 0.08), transparent 45%), var(--bg);
+    }
+    .policy-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .policy-hero {
+      padding: clamp(2.5rem, 5vw, 3.5rem) 1.25rem 1.5rem;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+    }
+    .policy-hero .container {
+      display: grid;
+      gap: 1.2rem;
+    }
+    .policy-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent2);
+    }
+    .policy-title {
+      font-family: "Hind", Inter, system-ui, sans-serif;
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      margin: 0;
+      color: var(--text);
+    }
+    .policy-subtitle {
+      max-width: 70ch;
+      margin: 0;
+      color: var(--muted);
+    }
+    .policy-grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+    .policy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      box-shadow: none;
+    }
+    .policy-card h2 {
+      font-family: "Hind", Inter, system-ui, sans-serif;
+      font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    .policy-card ul {
+      padding-left: 1.1rem;
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+    }
+    .policy-card li {
+      margin: 0.4rem 0;
+    }
+    .policy-highlight {
+      border: 1px solid rgba(34, 211, 238, 0.4);
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(37, 99, 235, 0.08));
+    }
+    .policy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .policy-footer {
+      padding: 2rem 1.25rem 2.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .policy-footer strong {
+      color: var(--text);
+    }
+    @media (min-width: 960px) {
+      .policy-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .policy-grid .policy-card:last-child {
+        grid-column: span 2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="policy-shell">
+    <header class="policy-hero">
+      <div class="container">
+        <span class="policy-eyebrow">Dicho · Política de Privacidad</span>
+        <h1 class="policy-title">Privacidad clara para un gestor de gastos por voz.</h1>
+        <p class="policy-subtitle">
+          Esta política describe cómo SgaGeStudio trata los datos dentro de la app Dicho. Está diseñada
+          para cumplir con los requisitos de Google Play Store y mantener una experiencia transparente.
+        </p>
+        <div class="policy-meta">
+          <span>Responsable: SgaGeStudio</span>
+          <span>Contacto: sgagestudio@gmail.com</span>
+          <span>Última actualización: 27 de enero de 2025</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container policy-grid">
+          <article class="policy-card policy-highlight">
+            <h2>Identidad del responsable</h2>
+            <p>
+              SgaGeStudio actúa como responsable del tratamiento para la app Dicho. Esta política aplica a
+              la gestión de datos generados por el uso de comandos de voz para registrar gastos.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h2>Datos recopilados</h2>
+            <ul>
+              <li><strong>Audio/Voz:</strong> la app solicita acceso al micrófono únicamente para capturar comandos de gasto.</li>
+              <li><strong>Datos financieros:</strong> montos, fechas y categorías de gastos introducidos por el usuario.</li>
+            </ul>
+          </article>
+
+          <article class="policy-card">
+            <h2>Uso de inteligencia artificial</h2>
+            <p>
+              El texto reconocido se procesa mediante la API de Google Gemini para interpretar los comandos.
+              Los datos no se utilizan para perfilado publicitario ni para crear perfiles de anuncios.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h2>Almacenamiento y seguridad</h2>
+            <p>
+              Toda la información se guarda exclusivamente en el dispositivo del usuario. Dicho no utiliza
+              bases de datos externas ni servidores propios para almacenar gastos.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h2>Permisos requeridos</h2>
+            <ul>
+              <li><strong>RECORD_AUDIO:</strong> necesario para capturar comandos de voz y convertirlos a texto.</li>
+              <li><strong>INTERNET:</strong> requerido para enviar el texto a la API de Google Gemini y recibir la respuesta.</li>
+            </ul>
+          </article>
+
+          <article class="policy-card">
+            <h2>Eliminación de datos</h2>
+            <p>
+              Al desinstalar la aplicación o borrar la caché/almacenamiento desde el sistema operativo, todos
+              los datos locales se eliminan permanentemente del dispositivo.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h2>Contacto</h2>
+            <p>
+              Para consultas sobre privacidad o solicitudes relacionadas, escribe a
+              <strong>sgagestudio@gmail.com</strong>.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="policy-footer">
+      <p>
+        Dicho es un producto de <strong>SgaGeStudio</strong>. Esta página existe exclusivamente como referencia
+        legal y de transparencia para la aplicación.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
